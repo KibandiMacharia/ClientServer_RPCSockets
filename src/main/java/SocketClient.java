@@ -37,29 +37,5 @@ public class SocketClient {
         PrintStream p=new PrintStream(s.getOutputStream());//pass admission number to the socket
         p.println(adm_no);*/
         
-        PrintWriter out = null;
-        BufferedReader in = null;
-        
-        BufferedReader stdIn = new BufferedReader(new InputStreamReader(System.in));
-        String fromServer;
-        String fromUser;
-
-        while ((fromServer = in.readLine()) != null) {
-            System.out.println("Server: " + fromServer);
-            if (fromServer.equals("Bye."))
-                break;
-		    
-            fromUser = stdIn.readLine();
-	    if (fromUser != null) {
-                System.out.println("Client: " + fromUser);
-                out.println(fromUser);
-	    }
-        }
-
-        out.close();
-        in.close();
-        stdIn.close();
-        //socket.close();
-        
     }
 }
